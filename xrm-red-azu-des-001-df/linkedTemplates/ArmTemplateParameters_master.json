@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "xrm-red-azu-des-001-df"
+		},
+		"AzureSql_des_001_df_LinkedService_connectionString": {
+			"value": ""
+		},
+		"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
+			"value": ""
+		},
+		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+			"value": "mdellaquila@redsapsolutions.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

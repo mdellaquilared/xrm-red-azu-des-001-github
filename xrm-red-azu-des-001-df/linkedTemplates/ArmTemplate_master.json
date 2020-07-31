@@ -1,0 +1,63 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "xrm-red-azu-des-001-df"
+		},
+		"AzureSql_des_001_df_LinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSql_des_001_df_LinkedService'"
+		},
+		"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dyn365_Mercury_xrm_v1_df_LinkedService'"
+		},
+		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "mdellaquila@redsapsolutions.com"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSql_des_001_df_LinkedService_connectionString": {
+						"value": "[parameters('AzureSql_des_001_df_LinkedService_connectionString')]"
+					},
+					"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
+						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_password')]"
+					},
+					"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

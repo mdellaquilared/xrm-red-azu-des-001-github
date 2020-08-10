@@ -5,14 +5,6 @@
 			"referenceName": "AzureSql_des_001_df_LinkedService",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cw_table": {
-				"type": "String"
-			},
-			"vacancySQLLastModified": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [

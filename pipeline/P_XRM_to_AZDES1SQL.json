@@ -25,6 +25,58 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "Copy-Each-Table",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Get-Tables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "Copy-Table",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DynamicsSource",
+									"query": "<fetch>\n<entity name=\"@{item().Table_Name}\">\n<all-attributes />\n</entity>\n</fetch>"
+								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_XRM_Source",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_AZDES1SQL_Sink",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"annotations": []

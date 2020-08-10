@@ -12,9 +12,6 @@
 		},
 		"annotations": [],
 		"type": "DynamicsEntity",
-		"schema": [],
-		"typeProperties": {
-			"entityName": "crimson_vacancy"
-		}
+		"schema": []
 	}
 }

@@ -1415,10 +1415,6 @@
 				"type": "bigint",
 				"precision": 19
 			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "xrm.crimson_vacancy"
-		}
+		]
 	}
 }

@@ -1,0 +1,1432 @@
+{
+	"name": "DS_AZDES1SQL_PIPELINE_PARAMETER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "String"
+			},
+			"vacancySQLLastModified": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "createdby",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "createdbyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "createdon",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_addresscity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_addressid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_addresslookup",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_addressname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_addresspostcode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_bonus",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_bonus_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_bonusshares",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_candidaterate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_candidaterate_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_chargecurrency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_chargecurrencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientcontact",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_clientcontactname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientcontactyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientemail",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_clientidname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientidyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientmobile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientphone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_clientrate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_clientrate_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_clientsitelookup",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_contactbonusfrequency",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_contractduration",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_contractmargin",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_contractmarginfee",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_contractmarkup",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_contractrate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_contractrate_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_contractrateper",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_contracttermsagreed",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_contracttimesheetinterval",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_daysperweek",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_deliveryownerid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_deliveryowneridname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_deliveryowneridyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_feebasedon",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_frequency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_frequencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_grossprofit",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_grossprofit_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_holidays",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_hoursperweek",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_jobduration",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_jobsummary",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_jobsummaryemail",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_jobtitle",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_location",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_margin",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_permanentmargin",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_permanentmarginfee",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_permanentmarkup",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_permanenttermsagreed",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_probability",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_probabilityestimate",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_profit",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_profit_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_profitmarkup",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_reviewdate",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "crimson_salary",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_salary_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_salesvalue",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_salesvalue_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_speculative",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_startdate",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "crimson_temporarycandidatepay",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarycandidatepay_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporaryclientrate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporaryclientrate_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporaryfixedfee",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarymargin",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarymarginfee",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_temporarymarginvalue",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarymarkup",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarymarkuppercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarynipercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarytermsagreed",
+				"type": "bit"
+			},
+			{
+				"name": "crimson_temporarytotalpay",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temporarywtdpercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temportarycandidaterate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_temportarycandidaterate_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_totalpackage",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_totalpackage_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_typeofposition",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "crimson_vacancyautonumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_vacancyid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "crimson_vacancyrefno",
+				"type": "nvarchar"
+			},
+			{
+				"name": "crimson_vacancyrevenue",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "crimson_vacancyrevenue_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "exchangerate",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_addressstreet1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_aggregatefees",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_aggregatefees_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_aggregatefees_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_aggregatefees_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_agreementid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_agreementidname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_benefitsnotes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_charge_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_charge_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_charge_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_charge_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_charge_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_clientref",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_currentdatetime",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_cvsrequired",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_discipline",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_disciplinename",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_emaildescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_endclient",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_endclientname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_endclientyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_endcontact",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_endcontactname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_endcontactyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_exclusive",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_feebasedon",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_feebasedon2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_feestructure",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_furtheststatus",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_grossprofit_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_grossprofit_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_grossprofit_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_grossprofit_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_grossprofit_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_importednote",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_importedrecordid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_info",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_infoname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_inheritancestatus",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_initialteam",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_initialteamname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_initialteamyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_location",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_lostreason",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_lostreasonname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_marginpercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_marginvalue_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_marginvalue_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_marginvalue_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_marginvalue_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_marginvalue_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_markuppercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_mostrecentcascade",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_multicurrencyxml",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_notyetoffered",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_numberofdays",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_numberofhours",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_numberofmonths",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_numberofpositionsfilled",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_numberofpositionsfilled_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_numberofpositionsfilled_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_numberofpositionsremaining",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_numberofweeks",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_pay_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_pay_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_pay_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_pay_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_pay_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_percentageaccepted",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_percentageinterviewed",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_percentageoffered",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_percentagesubmitted",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentfee_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentfee_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_permanentfee_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_permanentfee_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentfee_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentfeepercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentpackagevalue_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentpackagevalue_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_permanentpackagevalue_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_permanentpackagevalue_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentpackagevalue_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentsalary_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentsalary_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_permanentsalary_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_permanentsalary_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentsalary_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_permanentsalaryto",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_priority",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_readyforscarlet",
+				"type": "bit"
+			},
+			{
+				"name": "mercury_recruitmenttype",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_regnostatus",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_retained",
+				"type": "bit"
+			},
+			{
+				"name": "mercury_salesvalue_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_salesvalue_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_salesvalue_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_salesvalue_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_salesvalue_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_senttoclient",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_senttoclient_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_senttoclient_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_sourcereferenceid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_sourcereferenceidname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_sourceuser",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_sourceusername",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_sourceuseryominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_subsector",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_subsectorname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_tempcandidatepay_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempcandidatepay_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_tempcandidatepay_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_tempcandidatepay_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempcandidatepay_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempdeductionpercent",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempdeductions_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempdeductions_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_tempdeductions_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_tempdeductions_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_tempdeductions_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_to",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_to_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_totalestimatedpay_mc",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_totalestimatedpay_mc_currency",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_totalestimatedpay_mc_currencyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_totalestimatedpay_mc_normalised",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_totalestimatedpay_mc_normalised_base",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "mercury_totalinterviewed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalinterviewed_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totalinterviewed_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totaloffered",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totaloffered_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totaloffered_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalplaced",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalplaced_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totalplaced_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalpotentialcandidates",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalpotentialcandidates_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totalpotentialcandidates_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalrejectedafterinterview",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalrejectedbeforeshortlist",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalrejectedunsubmitted",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalrejectedwithoutinterview",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalshortlisted",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalshortlisted_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totalshortlisted_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalsubmitted",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_totalsubmitted_date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "mercury_totalsubmitted_state",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mercury_userfield1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_userfield2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_userfield3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_userfield4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_userfield5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_vacancytype",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "mercury_vacancytypename",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mercury_visibleonportal",
+				"type": "bit"
+			},
+			{
+				"name": "modifiedby",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "modifiedon",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "new_companycar",
+				"type": "bit"
+			},
+			{
+				"name": "new_medicalinsurance",
+				"type": "bit"
+			},
+			{
+				"name": "new_numberofpositions",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "new_pensionscheme",
+				"type": "bit"
+			},
+			{
+				"name": "new_training",
+				"type": "bit"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "ownerid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "owneridname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "owneridtype",
+				"type": "nvarchar"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "owningteam",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "owninguser",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "processid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "stageid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "statecode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "statuscode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "transactioncurrencyid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "transactioncurrencyidname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "traversedpath",
+				"type": "nvarchar"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "versionnumber",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipeline_parameter"
+		}
+	}
+}

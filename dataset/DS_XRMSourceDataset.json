@@ -1,5 +1,5 @@
 {
-	"name": "XRMSourceDataset",
+	"name": "DS_XRMSourceDataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",

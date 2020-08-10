@@ -1,0 +1,20 @@
+{
+	"name": "XRMSourceDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"vacancyLastModified": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "crimson_vacancy"
+		}
+	}
+}

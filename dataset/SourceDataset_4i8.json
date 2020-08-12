@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_4i8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "crimson_vacancycandidate"
+		}
+	}
+}

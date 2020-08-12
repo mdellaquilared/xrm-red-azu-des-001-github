@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_4i8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": "crimson_vacancycandidate"
+		}
+	}
+}

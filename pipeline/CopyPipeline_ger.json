@@ -1,0 +1,2948 @@
+{
+	"name": "CopyPipeline_ger",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_ger",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "crimson_vacancy"
+					},
+					{
+						"name": "Destination",
+						"value": ".crimson_vacancy"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_addresscity",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_addresscity",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_addressid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_addressid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_addresslookup",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_addresslookup",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_addressname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_addressname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_addresspostcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_addresspostcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_bonus",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_bonus",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_bonus_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_bonus_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_bonusshares",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_bonusshares",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_candidaterate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_candidaterate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_candidaterate_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_candidaterate_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_chargecurrency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_chargecurrency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_chargecurrencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_chargecurrencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientcontact",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_clientcontact",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientcontactname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientcontactname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientcontactyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientcontactyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientemail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientemail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_clientid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientmobile",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientmobile",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientphone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_clientphone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientrate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_clientrate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientrate_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_clientrate_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_clientsitelookup",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_clientsitelookup",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contactbonusfrequency",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_contactbonusfrequency",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractduration",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_contractduration",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractmargin",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_contractmargin",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractmarginfee",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_contractmarginfee",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractmarkup",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_contractmarkup",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractrate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_contractrate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractrate_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_contractrate_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contractrateper",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_contractrateper",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contracttermsagreed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_contracttermsagreed",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_contracttimesheetinterval",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_contracttimesheetinterval",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_daysperweek",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_daysperweek",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_deliveryownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_deliveryownerid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_deliveryowneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_deliveryowneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_deliveryowneridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_deliveryowneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_feebasedon",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_feebasedon",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_frequency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_frequency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_frequencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_frequencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_grossprofit",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_grossprofit",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_grossprofit_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_grossprofit_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_holidays",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_holidays",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_hoursperweek",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_hoursperweek",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_jobduration",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_jobduration",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_jobsummary",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_jobsummary",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_jobsummaryemail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_jobsummaryemail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_jobtitle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_jobtitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_location",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_margin",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_margin",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_permanentmargin",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_permanentmargin",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_permanentmarginfee",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_permanentmarginfee",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_permanentmarkup",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_permanentmarkup",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_permanenttermsagreed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_permanenttermsagreed",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_probability",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_probability",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_probabilityestimate",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_probabilityestimate",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_profit",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_profit",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_profit_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_profit_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_profitmarkup",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_profitmarkup",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_reviewdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "crimson_reviewdate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_salary",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_salary",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_salary_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_salary_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_salesvalue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_salesvalue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_salesvalue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_salesvalue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_speculative",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_speculative",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_startdate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "crimson_startdate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarycandidatepay",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarycandidatepay",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarycandidatepay_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarycandidatepay_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporaryclientrate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporaryclientrate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporaryclientrate_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporaryclientrate_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporaryfixedfee",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporaryfixedfee",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarymargin",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarymargin",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarymarginfee",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_temporarymarginfee",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarymarginvalue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarymarginvalue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarymarkup",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarymarkup",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarymarkuppercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarymarkuppercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarynipercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarynipercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarytermsagreed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "crimson_temporarytermsagreed",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarytotalpay",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarytotalpay",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temporarywtdpercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temporarywtdpercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temportarycandidaterate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temportarycandidaterate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_temportarycandidaterate_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_temportarycandidaterate_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_totalpackage",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_totalpackage",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_totalpackage_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_totalpackage_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_typeofposition",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "crimson_typeofposition",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_vacancyautonumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_vacancyautonumber",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_vacancyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "crimson_vacancyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_vacancyrefno",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_vacancyrefno",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_vacancyrevenue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_vacancyrevenue",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_vacancyrevenue_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "crimson_vacancyrevenue_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_addressstreet1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_addressstreet1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_aggregatefees",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_aggregatefees",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_aggregatefees_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_aggregatefees_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_aggregatefees_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_aggregatefees_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_aggregatefees_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_aggregatefees_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_agreementid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_agreementid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_agreementidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_agreementidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_benefitsnotes",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_benefitsnotes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_charge_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_charge_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_charge_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_charge_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_charge_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_charge_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_charge_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_charge_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_charge_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_charge_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_clientref",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_clientref",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_currentdatetime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_currentdatetime",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_cvsrequired",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_cvsrequired",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_discipline",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_discipline",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_disciplinename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_disciplinename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_emaildescription",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_emaildescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endclient",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_endclient",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endclientname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_endclientname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endclientyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_endclientyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endcontact",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_endcontact",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endcontactname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_endcontactname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_endcontactyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_endcontactyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_exclusive",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_exclusive",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_feebasedon",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_feebasedon",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_feebasedon2",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_feebasedon2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_feestructure",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_feestructure",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_furtheststatus",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_furtheststatus",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_grossprofit_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_grossprofit_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_grossprofit_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_grossprofit_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_grossprofit_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_grossprofit_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_grossprofit_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_grossprofit_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_grossprofit_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_grossprofit_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_importednote",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_importednote",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_importedrecordid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_importedrecordid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_info",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_info",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_infoname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_infoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_inheritancestatus",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_inheritancestatus",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_initialteam",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_initialteam",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_initialteamname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_initialteamname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_initialteamyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_initialteamyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_location",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_lostreason",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_lostreason",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_lostreasonname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_lostreasonname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginpercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_marginpercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginvalue_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_marginvalue_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginvalue_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_marginvalue_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginvalue_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_marginvalue_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginvalue_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_marginvalue_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_marginvalue_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_marginvalue_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_markuppercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_markuppercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_mostrecentcascade",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_mostrecentcascade",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_multicurrencyxml",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_multicurrencyxml",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_notyetoffered",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_notyetoffered",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofdays",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_numberofdays",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofhours",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_numberofhours",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofmonths",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_numberofmonths",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofpositionsfilled",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_numberofpositionsfilled",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofpositionsfilled_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_numberofpositionsfilled_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofpositionsfilled_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_numberofpositionsfilled_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofpositionsremaining",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_numberofpositionsremaining",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_numberofweeks",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_numberofweeks",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_pay_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_pay_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_pay_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_pay_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_pay_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_pay_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_pay_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_pay_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_pay_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_pay_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_percentageaccepted",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_percentageaccepted",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_percentageinterviewed",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_percentageinterviewed",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_percentageoffered",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_percentageoffered",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_percentagesubmitted",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_percentagesubmitted",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfee_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentfee_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfee_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_permanentfee_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfee_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_permanentfee_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfee_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentfee_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfee_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentfee_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentfeepercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentfeepercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentpackagevalue_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentpackagevalue_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentpackagevalue_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_permanentpackagevalue_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentpackagevalue_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_permanentpackagevalue_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentpackagevalue_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentpackagevalue_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentpackagevalue_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentpackagevalue_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalary_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentsalary_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalary_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_permanentsalary_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalary_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_permanentsalary_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalary_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentsalary_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalary_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentsalary_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_permanentsalaryto",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_permanentsalaryto",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_priority",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_priority",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_readyforscarlet",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mercury_readyforscarlet",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_recruitmenttype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_recruitmenttype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_regnostatus",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_regnostatus",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_retained",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mercury_retained",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_salesvalue_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_salesvalue_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_salesvalue_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_salesvalue_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_salesvalue_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_salesvalue_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_salesvalue_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_salesvalue_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_salesvalue_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_salesvalue_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_senttoclient",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_senttoclient",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_senttoclient_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_senttoclient_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_senttoclient_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_senttoclient_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_sourcereferenceid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_sourcereferenceid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_sourcereferenceidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_sourcereferenceidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_sourceuser",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_sourceuser",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_sourceusername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_sourceusername",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_sourceuseryominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_sourceuseryominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_subsector",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_subsector",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_subsectorname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_subsectorname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempcandidatepay_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempcandidatepay_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempcandidatepay_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_tempcandidatepay_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempcandidatepay_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_tempcandidatepay_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempcandidatepay_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempcandidatepay_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempcandidatepay_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempcandidatepay_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductionpercent",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempdeductionpercent",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductions_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempdeductions_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductions_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_tempdeductions_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductions_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_tempdeductions_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductions_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempdeductions_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_tempdeductions_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_tempdeductions_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_to",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_to",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_to_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_to_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalestimatedpay_mc",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_totalestimatedpay_mc",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalestimatedpay_mc_currency",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_totalestimatedpay_mc_currency",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalestimatedpay_mc_currencyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_totalestimatedpay_mc_currencyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalestimatedpay_mc_normalised",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_totalestimatedpay_mc_normalised",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalestimatedpay_mc_normalised_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_totalestimatedpay_mc_normalised_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalinterviewed",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalinterviewed",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalinterviewed_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totalinterviewed_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalinterviewed_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalinterviewed_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totaloffered",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totaloffered",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totaloffered_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totaloffered_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totaloffered_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totaloffered_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalplaced",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalplaced",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalplaced_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totalplaced_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalplaced_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalplaced_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalpotentialcandidates",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalpotentialcandidates",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalpotentialcandidates_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totalpotentialcandidates_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalpotentialcandidates_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalpotentialcandidates_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalrejectedafterinterview",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalrejectedafterinterview",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalrejectedbeforeshortlist",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalrejectedbeforeshortlist",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalrejectedunsubmitted",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalrejectedunsubmitted",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalrejectedwithoutinterview",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalrejectedwithoutinterview",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalshortlisted",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalshortlisted",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalshortlisted_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totalshortlisted_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalshortlisted_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalshortlisted_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalsubmitted",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalsubmitted",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalsubmitted_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mercury_totalsubmitted_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_totalsubmitted_state",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_totalsubmitted_state",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_userfield1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_userfield1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_userfield2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_userfield2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_userfield3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_userfield3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_userfield4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_userfield4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_userfield5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_userfield5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_vacancytype",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_vacancytype",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_vacancytypename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_vacancytypename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_visibleonportal",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mercury_visibleonportal",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_companycar",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "new_companycar",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "new_medicalinsurance",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "new_medicalinsurance",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "new_numberofpositions",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_numberofpositions",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_pensionscheme",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "new_pensionscheme",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "new_training",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "new_training",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridtype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningbusinessunit",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owningteam",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owningteam",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "owninguser",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "processid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "processid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "stageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "stageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "statuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "statuscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "traversedpath",
+									"type": "String"
+								},
+								"sink": {
+									"name": "traversedpath",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ger",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_ger",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

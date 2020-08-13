@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "",
-			"table": "crimson_vacancycandidate"
+			"table": "crimson_vacancy"
 		}
 	}
 }

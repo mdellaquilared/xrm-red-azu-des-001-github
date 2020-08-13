@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_ger",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": "crimson_vacancy"
+		}
+	}
+}

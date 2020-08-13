@@ -1,0 +1,23 @@
+{
+	"name": "SourceDataset_k07",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_entityName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": {
+				"value": "@dataset().cw_entityName",
+				"type": "Expression"
+			}
+		}
+	}
+}

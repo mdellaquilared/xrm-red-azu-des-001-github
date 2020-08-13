@@ -69,7 +69,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"crimson_candidate\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'pipeline().parameters.LastRunDateTime,",
+						"sqlReaderQuery": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"crimson_candidate\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'pipeline().parameters.LastRunDateTime, '\" />\n       </filter>\n     </entity>\n</fetch>",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

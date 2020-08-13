@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_rcp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": {
+				"value": "@dataset().cw_table",
+				"type": "Expression"
+			}
+		}
+	}
+}

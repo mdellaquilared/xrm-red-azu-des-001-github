@@ -9,7 +9,7 @@
 		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "crimson_vacancycandidate"
+			"entityName": "crimson_vacancy"
 		}
 	}
 }

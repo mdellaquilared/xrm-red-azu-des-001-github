@@ -95,7 +95,8 @@
 		],
 		"variables": {
 			"@LastMod": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "2020-08-12"
 			}
 		},
 		"annotations": []

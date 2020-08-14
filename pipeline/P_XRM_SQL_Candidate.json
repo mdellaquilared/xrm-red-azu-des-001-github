@@ -73,6 +73,11 @@
 				]
 			}
 		],
+		"variables": {
+			"@LastMod": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }

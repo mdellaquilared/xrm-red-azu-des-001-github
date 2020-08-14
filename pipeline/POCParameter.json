@@ -63,7 +63,7 @@
 								"storedProcedureParameters": {
 									"ProcedureName": {
 										"value": {
-											"value": "@item().ProcedureName",
+											"value": "@item().Procedure_Name",
 											"type": "Expression"
 										},
 										"type": "String"

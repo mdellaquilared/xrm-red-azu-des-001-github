@@ -28,7 +28,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEachProcedure",
 				"type": "ForEach",
 				"dependsOn": [
 					{

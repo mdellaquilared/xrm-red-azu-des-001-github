@@ -26,6 +26,51 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "CopyNewCandidatesIntoSQLTemp",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "LookupCandLastMod",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsSource",
+						"query": {
+							"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"crimson_candidate\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'\n           ,activity('LookupCandLastMod').output\n           , '\" />\n       </filter>\n     </entity>\n</fetch>')",
+							"type": "Expression"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_XRMCandidate",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQLDES1CandidateTemp",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

@@ -28,31 +28,11 @@
 				}
 			},
 			{
-				"name": "SetVariableCandLastMod",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "LookupCandLastMod",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "@LastMod",
-					"value": {
-						"value": "activity('LookupCandLastMod').output",
-						"type": "Expression"
-					}
-				}
-			},
-			{
 				"name": "CopyCandIntoCandTemp",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "SetVariableCandLastMod",
+						"activity": "LookupCandLastMod",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -95,11 +75,6 @@
 				]
 			}
 		],
-		"variables": {
-			"@LastMod": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }

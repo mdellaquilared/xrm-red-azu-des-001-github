@@ -85,7 +85,7 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "@LastMod",
+					"variableName": "LastMod",
 					"value": {
 						"value": "@activity('LookupCandLastMod').output",
 						"type": "Expression"
@@ -94,7 +94,7 @@
 			}
 		],
 		"variables": {
-			"@LastMod": {
+			"LastMod": {
 				"type": "String",
 				"defaultValue": "2020-08-12"
 			}

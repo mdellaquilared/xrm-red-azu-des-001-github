@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT MAX(modifiedon)\nFROM [dbo].[crimson_candidate]",
+						"sqlReaderStoredProcedureName": "[dbo].[usp_LastModCand]",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -30,14 +30,7 @@
 			{
 				"name": "CopyNewCandidatesIntoSQLTemp",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "SetLastMod",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -50,7 +43,7 @@
 					"source": {
 						"type": "DynamicsSource",
 						"query": {
-							"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"crimson_candidate\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'\n           ,variables('LastMod')\n           , '\" />\n       </filter>\n     </entity>\n</fetch>')\n",
+							"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"crimson_candidate\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'\n           ,activity('LookupCandLastMod').output\n           , '\" />\n       </filter>\n     </entity>\n</fetch>')",
 							"type": "Expression"
 						}
 					},
@@ -71,26 +64,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "SetLastMod",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "LookupCandLastMod",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "LastMod",
-					"value": {
-						"value": "@activity('LookupCandLastMod').output.firstRow.value",
-						"type": "Expression"
-					}
-				}
 			}
 		],
 		"variables": {

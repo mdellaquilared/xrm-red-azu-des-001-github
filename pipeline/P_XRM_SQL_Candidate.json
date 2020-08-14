@@ -87,7 +87,7 @@
 				"typeProperties": {
 					"variableName": "LastMod",
 					"value": {
-						"value": "@activity('LookupCandLastMod').output",
+						"value": "@activity('LookupCandLastMod').output.firstRow",
 						"type": "Expression"
 					}
 				}

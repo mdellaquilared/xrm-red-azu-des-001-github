@@ -23,7 +23,8 @@
 					"dataset": {
 						"referenceName": "DS_SQLDES1PipelineProcedures",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{

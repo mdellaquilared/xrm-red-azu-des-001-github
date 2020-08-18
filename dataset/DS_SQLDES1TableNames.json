@@ -1,0 +1,16 @@
+{
+	"name": "DS_SQLDES1TableNames",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipeline_parameter"
+		}
+	}
+}

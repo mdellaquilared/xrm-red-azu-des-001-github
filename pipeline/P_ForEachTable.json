@@ -40,6 +40,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('LookupPipelineParameters').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "FE_StoredProc_LastMod",

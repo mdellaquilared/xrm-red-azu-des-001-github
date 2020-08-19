@@ -3571,13 +3571,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_gf1",
+						"referenceName": "DS_XRMAccount",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_gf1",
+						"referenceName": "DS_SQLDES1Account",
 						"type": "DatasetReference"
 					}
 				]

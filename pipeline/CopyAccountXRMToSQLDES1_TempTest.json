@@ -3583,6 +3583,12 @@
 				]
 			}
 		],
+		"variables": {
+			"V_LastMod": {
+				"type": "String",
+				"defaultValue": "2020-08-11"
+			}
+		},
 		"annotations": []
 	}
 }

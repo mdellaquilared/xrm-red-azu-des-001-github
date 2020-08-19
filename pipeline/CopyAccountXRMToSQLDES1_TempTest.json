@@ -25,11 +25,11 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "DynamicsSource"
+						"type": "DynamicsSource",
+						"query": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"account\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'\n           ,variables('V_LastMod')\n           , '\"/>\n       </filter>\n     </entity>\n</fetch>')"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,

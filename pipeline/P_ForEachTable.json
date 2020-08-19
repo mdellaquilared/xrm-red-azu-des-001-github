@@ -28,7 +28,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEachTable",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -44,6 +44,7 @@
 						"value": "@activity('LookupPipelineParameters').output.value",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "FE_StoredProc_LastMod",
@@ -61,7 +62,10 @@
 								"storedProcedureName": "[dbo].[usp_LastModCand]",
 								"storedProcedureParameters": {
 									"TblName": {
-										"value": "@item().Table_Name_SQL",
+										"value": {
+											"value": "@item().Table_Name_SQL",
+											"type": "Expression"
+										},
 										"type": "String"
 									}
 								}

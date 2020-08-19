@@ -1,0 +1,41 @@
+{
+	"name": "DS_SQLDES1PipelineParameters",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Table_Name_SQL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Table_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Table_Catalog",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Key_Column",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Process_Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last_Mod_DateTime",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipeline_parameter"
+		}
+	}
+}

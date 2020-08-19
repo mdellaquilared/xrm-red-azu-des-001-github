@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_gf1",
+				"name": "CopyAccountXRMtoSQLDES1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

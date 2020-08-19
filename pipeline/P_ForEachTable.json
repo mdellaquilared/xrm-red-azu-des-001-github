@@ -59,7 +59,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[dbo].[usp_LastModCand]",
+								"storedProcedureName": "[dbo].[usp_LastMod_Master]",
 								"storedProcedureParameters": {
 									"TblName": {
 										"value": {

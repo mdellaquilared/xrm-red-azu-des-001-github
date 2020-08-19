@@ -57,7 +57,7 @@
 								"storedProcedureName": "[dbo].[usp_LastModCand]",
 								"storedProcedureParameters": {
 									"TblName": {
-										"value": "@item().Table_Name",
+										"value": "@item().Table_Name_SQL",
 										"type": "String"
 									}
 								}

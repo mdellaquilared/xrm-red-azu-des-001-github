@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\nSELECT table_name FROM information_schema.tables \nWHERE \ttable_name IN ('contact')\n",
+						"sqlReaderQuery": "SELECT table_name FROM information_schema.tables \nWHERE \ttable_name IN ('contact', 'systemuser')\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

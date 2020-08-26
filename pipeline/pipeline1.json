@@ -47,7 +47,7 @@
 					},
 					"activities": [
 						{
-							"name": "dataflow1",
+							"name": "CreateTables",
 							"type": "ExecuteDataFlow",
 							"dependsOn": [],
 							"policy": {

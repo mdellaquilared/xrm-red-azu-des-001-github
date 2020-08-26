@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\nSELECT table_name, * FROM information_schema.tables \nWHERE \ttable_name IN ('contact', 'systemuser', 'account', 'transactioncurrency')\n\tOR table_name LIKE 'crimson%'\n\tOR table_name LIKE 'mercury%'\n\tAND table_name NOT LIKE '%temp'\n",
+						"sqlReaderQuery": "\nSELECT table_name FROM information_schema.tables \nWHERE \ttable_name IN ('contact', 'systemuser', 'account', 'transactioncurrency')\n\tOR table_name LIKE 'crimson%'\n\tOR table_name LIKE 'mercury%'\n\tAND table_name NOT LIKE '%temp'\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

@@ -82,7 +82,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEach_Row_Pipeline_Paramenter_Table",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -92,7 +92,14 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup_Parameters_Table').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true
+				}
 			}
 		],
 		"annotations": []

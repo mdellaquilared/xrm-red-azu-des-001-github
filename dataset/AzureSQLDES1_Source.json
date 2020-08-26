@@ -1,0 +1,20 @@
+{
+	"name": "AzureSQLDES1_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "@dataset().tablename"
+		}
+	}
+}

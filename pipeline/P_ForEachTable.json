@@ -130,7 +130,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"sqltablename": {
-											"value": "@concat(item().Table_Name_SQL,'_temp')",
+											"value": "@concat(item().Table_Name,'_temp')",
 											"type": "Expression"
 										}
 									}

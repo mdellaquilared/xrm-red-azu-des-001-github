@@ -196,6 +196,12 @@
 								"dataflow": {
 									"referenceName": "UpsertTable",
 									"type": "DataFlowReference",
+									"parameters": {
+										"tablename": {
+											"value": "'@{item().Table_Name}'",
+											"type": "Expression"
+										}
+									},
 									"datasetParameters": {
 										"sourceSQLParameter": {
 											"sqltablename": "@item().Table_Name"

@@ -1,0 +1,23 @@
+{
+	"name": "DS_XRMParameter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"xrmtablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": {
+				"value": "@dataset().xrmtablename",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -8,6 +8,9 @@
 		"parameters": {
 			"xrmtablename": {
 				"type": "string"
+			},
+			"xrmlastmoddatetime": {
+				"type": "string"
 			}
 		},
 		"annotations": [],

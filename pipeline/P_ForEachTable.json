@@ -197,7 +197,7 @@
 									"referenceName": "UpsertTable",
 									"type": "DataFlowReference",
 									"parameters": {
-										"tablename": {
+										"DF_tablename": {
 											"value": "'@{item().Table_Name}'",
 											"type": "Expression"
 										}

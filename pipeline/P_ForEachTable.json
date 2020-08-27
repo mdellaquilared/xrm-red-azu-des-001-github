@@ -198,10 +198,10 @@
 									"type": "DataFlowReference",
 									"datasetParameters": {
 										"sourceSQLParameter": {
-											"sqltablename": "item().Table_Name"
+											"sqltablename": "@item().Table_Name"
 										},
 										"sinkSQLParameter": {
-											"sqltablename": "item().Table_Name"
+											"sqltablename": "@item().Table_Name"
 										}
 									}
 								},

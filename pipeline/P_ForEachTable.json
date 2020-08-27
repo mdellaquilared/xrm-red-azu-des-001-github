@@ -103,6 +103,9 @@
 										"type": "Expression"
 									}
 								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -116,6 +119,18 @@
 										},
 										"xrmlastmoddatetime": {
 											"value": "@item().Last_Mod_DateTime",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SQLDES1Parameter",
+									"type": "DatasetReference",
+									"parameters": {
+										"sqltablename": {
+											"value": "@concat(item().Table_Name_SQL,'_temp')",
 											"type": "Expression"
 										}
 									}

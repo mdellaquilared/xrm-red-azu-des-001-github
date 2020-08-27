@@ -172,6 +172,44 @@
 								"referenceName": "AzureSql_des_001_df_LinkedService",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "UpsertTable",
+							"type": "ExecuteDataFlow",
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataflow": {
+									"referenceName": "UpsertTable",
+									"type": "DataFlowReference",
+									"datasetParameters": {
+										"sourceSQLParameter": {
+											"sqltablename": "item().Table_Name"
+										},
+										"sinkSQLParameter": {
+											"sqltablename": "item().Table_Name"
+										}
+									}
+								},
+								"compute": {
+									"coreCount": 8,
+									"computeType": "General"
+								}
+							}
 						}
 					]
 				}

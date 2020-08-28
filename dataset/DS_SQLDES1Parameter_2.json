@@ -1,0 +1,24 @@
+{
+	"name": "DS_SQLDES1Parameter_2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_des_001_df_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sqltablename_2": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().sqltablename_2",
+				"type": "Expression"
+			}
+		}
+	}
+}

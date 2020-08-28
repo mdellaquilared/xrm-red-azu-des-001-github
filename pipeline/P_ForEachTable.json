@@ -7,7 +7,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "Stored procedure1",
+						"activity": "StoredProc_UpdateLastMod_PipelineParamenters",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -225,7 +225,7 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "StoredProc_UpdateLastMod_PipelineParamenters",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {

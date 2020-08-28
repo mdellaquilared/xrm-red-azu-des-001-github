@@ -205,6 +205,9 @@
 									"datasetParameters": {
 										"sourceSQLParameter": {
 											"sqltablename": "@item().Table_Name"
+										},
+										"sinkSQLParameter": {
+											"sqltablename_2": "@item().Table_Name"
 										}
 									}
 								},

@@ -24,7 +24,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Table_Name = 'contact'",
+						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Update'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

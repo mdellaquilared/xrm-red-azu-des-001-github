@@ -5,7 +5,14 @@
 			{
 				"name": "LookupPipelineParameters",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Stored procedure1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -48,36 +55,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "FE_StoredProc_LastMod",
-							"type": "SqlServerStoredProcedure",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"storedProcedureName": "[dbo].[usp_LastMod_Master]",
-								"storedProcedureParameters": {
-									"TblName": {
-										"value": {
-											"value": "@item().Table_Name_SQL",
-											"type": "Expression"
-										},
-										"type": "String"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureSql_des_001_df_LinkedService",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "Copy data1",
+							"name": "FE_Copy_XRM_to_SQLDES1",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -140,14 +118,7 @@
 						{
 							"name": "FE_StoredProc_TruncateTempTbls",
 							"type": "SqlServerStoredProcedure",
-							"dependsOn": [
-								{
-									"activity": "FE_StoredProc_LastMod",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -174,11 +145,11 @@
 							}
 						},
 						{
-							"name": "UpsertTable",
+							"name": "FE_Insert_Into_Table_From_Temp",
 							"type": "ExecuteDataFlow",
 							"dependsOn": [
 								{
-									"activity": "Copy data1",
+									"activity": "FE_StoredProc_DeleteFromTbl_IDinTemp",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -194,7 +165,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataflow": {
-									"referenceName": "UpsertTable",
+									"referenceName": "InsertTempToTbl",
 									"type": "DataFlowReference",
 									"parameters": {
 										"DF_tablename": {
@@ -216,8 +187,61 @@
 									"computeType": "General"
 								}
 							}
+						},
+						{
+							"name": "FE_StoredProc_DeleteFromTbl_IDinTemp",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "FE_Copy_XRM_to_SQLDES1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[usp_DeleteFromTbl_IDinTemp]",
+								"storedProcedureParameters": {
+									"TblName": {
+										"value": "@item().Table_Name",
+										"type": "String"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureSql_des_001_df_LinkedService",
+								"type": "LinkedServiceReference"
+							}
 						}
 					]
+				}
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Update_LastMod]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSql_des_001_df_LinkedService",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],

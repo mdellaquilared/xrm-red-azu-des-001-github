@@ -1,0 +1,166 @@
+{
+	"name": "P_ForEachTable_Initial",
+	"properties": {
+		"activities": [
+			{
+				"name": "LookupPipelineParameters",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQLDES1PipelineParameters",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEachTable",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "LookupPipelineParameters",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('LookupPipelineParameters').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "FE_Copy_SQLDES1_Temp_To_Tbls",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "FE_Copy_XRM_to_SQLDES1_Temp",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"tableOption": "autoCreate"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "AzureSQLDES1_Source",
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": {
+											"value": "@concat(item().Table_Name,'_temp')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SQLDES1Parameter",
+									"type": "DatasetReference",
+									"parameters": {
+										"sqltablename": {
+											"value": "item().Table_Name",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "FE_Copy_XRM_to_SQLDES1_Temp",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DynamicsSource",
+									"query": {
+										"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n     </entity>\n</fetch>')",
+										"type": "Expression"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"tableOption": "autoCreate"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_XRMParameter",
+									"type": "DatasetReference",
+									"parameters": {
+										"xrmtablename": {
+											"value": "@item().Table_Name",
+											"type": "Expression"
+										},
+										"xrmlastmoddatetime": {
+											"value": "@item().Last_Mod_DateTime",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SQLDES1Parameter",
+									"type": "DatasetReference",
+									"parameters": {
+										"sqltablename": {
+											"value": "@concat(item().Table_Name,'_temp')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"annotations": []
+	}
+}

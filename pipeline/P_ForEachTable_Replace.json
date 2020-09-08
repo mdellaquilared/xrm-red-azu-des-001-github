@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Update'",
+						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Replace'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -52,7 +52,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "FE_StoredProc_TruncateTempTbls",
+									"activity": "FE_StoredProc_TruncateTbls",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -70,7 +70,7 @@
 								"source": {
 									"type": "DynamicsSource",
 									"query": {
-										"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n       <filter type=\"and\">\n           <condition attribute=\"modifiedon\" operator=\"on-or-after\" value=\"'\n           ,item().Last_Mod_DateTime\n           , '\"/>\n       </filter>\n     </entity>\n</fetch>')",
+										"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n     </entity>\n</fetch>')",
 										"type": "Expression"
 									}
 								},
@@ -101,7 +101,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"sqltablename": {
-											"value": "@concat(item().Table_Name,'_temp')",
+											"value": "item().Table_Name",
 											"type": "Expression"
 										}
 									}
@@ -109,7 +109,7 @@
 							]
 						},
 						{
-							"name": "FE_StoredProc_TruncateTempTbls",
+							"name": "FE_StoredProc_TruncateTbls",
 							"type": "SqlServerStoredProcedure",
 							"dependsOn": [],
 							"policy": {
@@ -121,93 +121,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[dbo].[usp_TruncateTempTable_Master]",
+								"storedProcedureName": "[dbo].[usp_TruncateTable_Master]",
 								"storedProcedureParameters": {
 									"TblName": {
-										"value": {
-											"value": "@item().Table_Name_SQL",
-											"type": "Expression"
-										},
-										"type": "String"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "AzureSql_des_001_df_LinkedService",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "FE_Insert_Into_Table_From_Temp",
-							"type": "ExecuteDataFlow",
-							"dependsOn": [
-								{
-									"activity": "FE_StoredProc_DeleteFromTbl_IDinTemp",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"dataflow": {
-									"referenceName": "InsertTempToTbl",
-									"type": "DataFlowReference",
-									"parameters": {
-										"DF_tablename": {
-											"value": "'@{item().Table_Name}'",
-											"type": "Expression"
-										}
-									},
-									"datasetParameters": {
-										"sourceSQLParameter": {
-											"sqltablename": "@item().Table_Name"
-										},
-										"sinkSQLParameter": {
-											"sqltablename_2": "@item().Table_Name"
-										}
-									}
-								},
-								"compute": {
-									"coreCount": 8,
-									"computeType": "General"
-								}
-							}
-						},
-						{
-							"name": "FE_StoredProc_DeleteFromTbl_IDinTemp",
-							"type": "SqlServerStoredProcedure",
-							"dependsOn": [
-								{
-									"activity": "FE_Copy_XRM_to_SQLDES1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"storedProcedureName": "[dbo].[usp_DeleteFromTbl_IDinTemp]",
-								"storedProcedureParameters": {
-									"TblName": {
-										"value": {
-											"value": "@item().Table_Name",
-											"type": "Expression"
-										},
+										"value": "@item().Table_Name_SQL",
 										"type": "String"
 									}
 								}

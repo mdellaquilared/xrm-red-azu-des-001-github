@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT * FROM dbo.pipeline_parameter\nWHERE Table_Name IN ('account')",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},

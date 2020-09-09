@@ -1649,7 +1649,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "crimson_candidate"
+			"table": "account"
 		}
 	}
 }

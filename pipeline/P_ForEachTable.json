@@ -167,15 +167,9 @@
 								"dataflow": {
 									"referenceName": "InsertTempToTbl",
 									"type": "DataFlowReference",
-									"parameters": {
-										"DF_tablename": {
-											"value": "'@{item().Table_Name}'",
-											"type": "Expression"
-										}
-									},
 									"datasetParameters": {
 										"sourceSQLParameter": {
-											"sqltablename": "@item().Table_Name"
+											"sqltablename": "@concat(item().Table_Name,\"_temp\")"
 										},
 										"sinkSQLParameter": {
 											"sqltablename_2": "@item().Table_Name"

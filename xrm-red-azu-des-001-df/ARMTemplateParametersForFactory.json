@@ -11,6 +11,9 @@
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
 			"value": ""
 		},
+		"XRMSQL_connectionString": {
+			"value": ""
+		},
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
 			"value": "mdellaquila@redsapsolutions.com"
 		}

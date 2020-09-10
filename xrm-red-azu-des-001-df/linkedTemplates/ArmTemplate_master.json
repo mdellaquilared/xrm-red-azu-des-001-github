@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Dyn365_Mercury_xrm_v1_df_LinkedService'"
 		},
+		"XRMSQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'XRMSQL'"
+		},
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
 			"type": "string",
 			"defaultValue": "mdellaquila@redsapsolutions.com"
@@ -33,7 +37,7 @@
 	},
 	"resources": [
 		{
-			"name": "ArmTemplate_0",
+			"name": "xrm-red-azu-des-001-df_ArmTemplate_0",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-02-01",
 			"properties": {
@@ -52,12 +56,35 @@
 					"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
 						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_password')]"
 					},
+					"XRMSQL_connectionString": {
+						"value": "[parameters('XRMSQL_connectionString')]"
+					},
 					"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
 						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "xrm-red-azu-des-001-df_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'xrm-red-azu-des-001-df_ArmTemplate_0')]"
+			]
 		}
 	]
 }

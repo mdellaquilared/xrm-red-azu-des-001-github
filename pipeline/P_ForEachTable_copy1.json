@@ -205,7 +205,7 @@
 									"type": "DataFlowReference",
 									"datasetParameters": {
 										"sourceSQLParameter": {
-											"sqltablename": "@concat(item().Table_Name,\"_temp\")"
+											"sqltablename": "@concat(item().Table_Name,'_temp')"
 										},
 										"sinkSQLParameter": {
 											"sqltablename_2": "@item().Table_Name"

@@ -1,0 +1,24 @@
+{
+	"name": "ScheduledTrigger_Every15Minutes",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "P_ForEachTable",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2020-09-10T08:56:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

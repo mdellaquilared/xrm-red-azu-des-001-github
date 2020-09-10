@@ -24,7 +24,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Update'\nAND Table_Name IN ('account', 'mercury_applicant')",
+						"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Update'\nAND Table_Name IN ('account', 'contact', 'crimson_candidate')",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -225,6 +225,33 @@
 				"name": "StoredProc_UpdateLastMod_PipelineParamenters",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Update_LastMod]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSql_des_001_df_LinkedService",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "StoredProc_UpdateLastMod_PipelineParamenters_copy1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "ForEachTable",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,

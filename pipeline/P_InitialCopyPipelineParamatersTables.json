@@ -40,7 +40,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LookupPipelineParameters').output.value",
+						"value": "@activity('LookupTables').output.value",
 						"type": "Expression"
 					},
 					"activities": [

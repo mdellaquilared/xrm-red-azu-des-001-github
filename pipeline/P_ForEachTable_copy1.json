@@ -179,6 +179,44 @@
 								"referenceName": "AzureSql_des_001_df_LinkedService",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "FE_Insert_Into_Table_From_Temp",
+							"type": "ExecuteDataFlow",
+							"dependsOn": [
+								{
+									"activity": "FE_StoredProc_DeleteFromTbl_IDinTemp",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataflow": {
+									"referenceName": "InsertTempToTbl",
+									"type": "DataFlowReference",
+									"datasetParameters": {
+										"sourceSQLParameter": {
+											"sqltablename": "@concat(item().Table_Name,\"_temp\")"
+										},
+										"sinkSQLParameter": {
+											"sqltablename_2": "@item().Table_Name"
+										}
+									}
+								},
+								"compute": {
+									"coreCount": 8,
+									"computeType": "General"
+								}
+							}
 						}
 					]
 				}

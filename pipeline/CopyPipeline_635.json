@@ -1,0 +1,3327 @@
+{
+	"name": "CopyPipeline_635",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_635",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "systemuser"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.systemuser"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DynamicsSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "accessmode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "accessmode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "activedirectoryguid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "activedirectoryguid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address1_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address1_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address1_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address1_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "address2_addressid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_addresstypecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_city",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_city",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_composite",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_composite",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_county",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_county",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_fax",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_fax",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_latitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_latitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_line3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_line3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_longitude",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "address2_longitude",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postalcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postalcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_postofficebox",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_shippingmethodcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_stateorprovince",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_telephone3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_telephone3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_upszone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "address2_upszone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "address2_utcoffset",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "applicationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "applicationid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "applicationiduri",
+									"type": "String"
+								},
+								"sink": {
+									"name": "applicationiduri",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "azureactivedirectoryobjectid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "azureactivedirectoryobjectid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "businessunitid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "businessunitid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "businessunitidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "businessunitidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "calendarid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "calendarid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "caltype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "caltype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "createdby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crimson_initials",
+									"type": "String"
+								},
+								"sink": {
+									"name": "crimson_initials",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultfilterspopulated",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "defaultfilterspopulated",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultmailbox",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "defaultmailbox",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultmailboxname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "defaultmailboxname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "defaultodbfoldername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "defaultodbfoldername",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "disabledreason",
+									"type": "String"
+								},
+								"sink": {
+									"name": "disabledreason",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "displayinserviceviews",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "displayinserviceviews",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "domainname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "domainname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emailrouteraccessapproval",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "emailrouteraccessapproval",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "employeeid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "employeeid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "entityimage_timestamp",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimage_url",
+									"type": "String"
+								},
+								"sink": {
+									"name": "entityimage_url",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityimageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "entityimageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "exchangerate",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "firstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "firstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fullname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "fullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "governmentid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "governmentid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "homephone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "homephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "identityid",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "identityid",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "incomingemaildeliverymethod",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "incomingemaildeliverymethod",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "internalemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "internalemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "invitestatuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "invitestatuscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "isactivedirectoryuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isactivedirectoryuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isdisabled",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isdisabled",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isemailaddressapprovedbyo365admin",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isemailaddressapprovedbyo365admin",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "isintegrationuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "isintegrationuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "islicensed",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "islicensed",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "issyncwithdirectory",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "issyncwithdirectory",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "jobtitle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "jobtitle",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "lastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "lastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "latestupdatetime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "latestupdatetime",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_allowsendbulkemail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mercury_allowsendbulkemail",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_broadbeanpassword",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_broadbeanpassword",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_broadbeanusername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_broadbeanusername",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_dealsgp",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_dealsgp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_dealsgp_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_dealsgp_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_defaultsignature",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_defaultsignature",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_defaultsignaturename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_defaultsignaturename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_emaillimitdefinition",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_emaillimitdefinition",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_emaillimitdefinitionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_emaillimitdefinitionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_emaillimittracker",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_emaillimittracker",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_emaillimittrackername",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_emaillimittrackername",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalappointments",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalappointments",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalcandidatecalls",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalcandidatecalls",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goaldeals",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goaldeals",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalfinalinterviews",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalfinalinterviews",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalfirstinterviews",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalfirstinterviews",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalfurtherinterviews",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalfurtherinterviews",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goaloffersmade",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goaloffersmade",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalphonecalls",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalphonecalls",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalphonecalltoday",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalphonecalltoday",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalplacements",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalplacements",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalselections",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalselections",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalspecsends",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalspecsends",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalstarters",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalstarters",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_goalsubmissions",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_goalsubmissions",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_importednote",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_importednote",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_importedrecordid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_importedrecordid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodappointments",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodappointments",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodcandidatecalls",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodcandidatecalls",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_perioddeals",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_perioddeals",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_perioddealsgp",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_perioddealsgp",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodfinalinterviews",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodfinalinterviews",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodfirstinterview",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodfirstinterview",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodfurtherinterview",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodfurtherinterview",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodoffersmade",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodoffersmade",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodphonecall",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodphonecall",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodplacements",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodplacements",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodselections",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodselections",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodspecsend",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodspecsend",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodstarters",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodstarters",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodstartersgp",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodstartersgp",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_periodsubmissions",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "mercury_periodsubmissions",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_primaryteamid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_primaryteamid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_primaryteamidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_primaryteamidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_primaryteamidyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_primaryteamidyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_requiremanagerapprovalbeforesend",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mercury_requiremanagerapprovalbeforesend",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_startersgp",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_startersgp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_startersgp_base",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "mercury_startersgp_base",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_substituteapprovers",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mercury_substituteapprovers",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_substituteapproversname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_substituteapproversname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mercury_substituteapproversyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mercury_substituteapproversyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "middlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "middlename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilealertemail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilealertemail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobileofflineprofileid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "mobileofflineprofileid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "mobileofflineprofileidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobileofflineprofileidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mobilephone",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mobilephone",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "msdyn_gdproptout",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "new_appointmentscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_appointmentscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_calltimecontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_calltimecontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_calltimecontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_calltimecontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_calltimedeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_calltimedeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_calltimeusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_calltimeusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecalldeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecalldeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecallscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecallscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecallslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecallslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecallspermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecallspermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecallsprevious",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecallsprevious",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_candidatecallsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_candidatecallsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_clientcallscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_clientcallscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_clientcallslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_clientcallslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_clientcallspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_clientcallspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_clientmappingredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_clientmappingredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_crosssellingtoredredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_crosssellingtoredredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dealgpcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dealgpcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dealsgpcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dealsgpcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dialoutscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dialoutscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dialoutscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dialoutscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dialoutsdeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dialoutsdeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_dialoutsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_dialoutsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_duplicatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_duplicatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_firstinterviewcontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_firstinterviewcontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_firstinterviewscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_firstinterviewscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_firstinterviewslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_firstinterviewslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_firstinterviewspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_firstinterviewspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_goalsandperformancedivision",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_goalsandperformancedivision",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_infodeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_infodeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_infolifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_infolifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_infopermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_infopermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_latepoints",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_latepoints",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_leadsmarketinforedqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_leadsmarketinforedqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_newbloodredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_newbloodredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_newcandidatespermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_newcandidatespermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_newcontactspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_newcontactspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_offerlifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_offerlifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodappointmentscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodappointmentscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcalltimecontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcalltimecontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcalltimecontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcalltimecontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcalltimedeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcalltimedeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcalltimedeliveryus",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcalltimedeliveryus",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcandidatecallscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcandidatecallscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcandidatecallsdeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcandidatecallsdeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcandidatecallslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcandidatecallslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcandidatecallspermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcandidatecallspermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcandidatecallsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcandidatecallsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodclientcallscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodclientcallscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodclientcallslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodclientcallslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodclientcallspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodclientcallspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodclientmappingredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodclientmappingredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodcrosssellingtoredredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodcrosssellingtoredredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_perioddialoutscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_perioddialoutscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_perioddialoutscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_perioddialoutscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_perioddialoutsdeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_perioddialoutsdeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_perioddialoutsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_perioddialoutsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodduplicatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodduplicatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodfirstinterviewcontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodfirstinterviewcontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodfirstinterviewpermsalesuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodfirstinterviewpermsalesuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodfirstinterviewslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodfirstinterviewslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodinfodeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodinfodeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodinfolifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodinfolifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodinfopermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodinfopermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodinterviewscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodinterviewscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodleadsmarketinforedqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodleadsmarketinforedqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodnewbloodsredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodnewbloodsredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodnewcandidatespermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodnewcandidatespermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodnewcontactspermsalesuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodnewcontactspermsalesuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodofferslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodofferslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodphonecallscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodphonecallscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementgpcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementgpcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementprevious",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementprevious",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementscurrent",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementscurrent",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementsdeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementsdeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodplacementsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodplacementsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodrevivingredintroredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodrevivingredintroredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsharingcandidatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsharingcandidatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodshortlistingredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodshortlistingredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedcontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedcontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmitteddeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmitteddeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedlifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedlifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedpermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedpermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedpermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedpermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodsubmittedusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodsubmittedusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodtaggingcandidatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodtaggingcandidatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodupdatingcvsredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodupdatingcvsredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciesccontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciesccontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciescontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciescontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacancieslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacancieslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciesprevious",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciesprevious",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciessabcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciessabcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciestypeapermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciestypeapermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacanciestypebandcpermsalesuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacanciestypebandcpermsalesuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacancycurrent",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacancycurrent",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_periodvacancyprevious",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_periodvacancyprevious",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_phonecallscontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_phonecallscontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_placementscontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_placementscontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_placementsdeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_placementsdeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_placementslifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_placementslifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_placementspermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_placementspermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_placementsusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_placementsusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_revivingredintroredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_revivingredintroredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_sharingcandidatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_sharingcandidatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_shortlistingredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_shortlistingredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submittedcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedcontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submittedcontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submitteddeliverydach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submitteddeliverydach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedlifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submittedlifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedpermukdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submittedpermukdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedpermuksales",
+									"type": "String"
+								},
+								"sink": {
+									"name": "new_submittedpermuksales",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "new_submittedusdelivery",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_submittedusdelivery",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_taggingcandidatesredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_taggingcandidatesredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_updatingcvsredqx",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_updatingcvsredqx",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacancies",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacancies",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciesccontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciesccontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciescontractuk",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciescontractuk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciesnonspeclifescience",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciesnonspeclifescience",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciessabcontractdach",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciessabcontractdach",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciestypeapermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciestypeapermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacanciestypebandcpermuksales",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacanciestypebandcpermuksales",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "new_vacancyprevious",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "new_vacancyprevious",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "nickname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "nickname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "organizationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "organizationid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "organizationidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "organizationidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "outgoingemaildeliverymethod",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "outgoingemaildeliverymethod",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuserid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "parentsystemuserid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuseridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentsystemuseridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "parentsystemuseridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentsystemuseridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "passporthi",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "passporthi",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "passportlo",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "passportlo",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "personalemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "personalemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "photourl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "photourl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "positionid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "positionid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "positionidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "positionidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredaddresscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredaddresscode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredemailcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredemailcode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "preferredphonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "preferredphonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "processid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "processid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "queueid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "queueid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "queueidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "queueidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "salutation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "salutation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "setupuser",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "setupuser",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "sharepointemailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "sharepointemailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "siteid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "siteid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "siteidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "siteidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "skills",
+									"type": "String"
+								},
+								"sink": {
+									"name": "skills",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stageid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "stageid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "systemuserid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "systemuserid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "territoryid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "territoryidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "territoryidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "title",
+									"type": "String"
+								},
+								"sink": {
+									"name": "title",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "transactioncurrencyid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "transactioncurrencyidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "traversedpath",
+									"type": "String"
+								},
+								"sink": {
+									"name": "traversedpath",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "userlicensetype",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "userlicensetype",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "userpuid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "userpuid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "windowsliveid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "windowsliveid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yammeremailaddress",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yammeremailaddress",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yammeruserid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yammeruserid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifirstname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifirstname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomifullname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomifullname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomilastname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomilastname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "yomimiddlename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "yomimiddlename",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_635",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_635",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

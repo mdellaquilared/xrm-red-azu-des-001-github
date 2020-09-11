@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_Every_6_Hours",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "P_ForEachTable_Replace",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 6,
+				"startTime": "2020-09-11T10:39:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

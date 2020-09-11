@@ -68,7 +68,11 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "DynamicsSource"
+									"type": "DynamicsSource",
+									"query": {
+										"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n     </entity>\n</fetch>')",
+										"type": "Expression"
+									}
 								},
 								"sink": {
 									"type": "AzureSqlSink"

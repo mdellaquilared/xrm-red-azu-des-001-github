@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_Daily",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "P_UpdateDailyCount",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2020-09-12T01:00:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

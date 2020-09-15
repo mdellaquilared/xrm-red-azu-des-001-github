@@ -7584,6 +7584,188 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/P_ForEachTable_Replace')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "LookupPipelineParameters",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Replace'",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"dataset": {
+								"referenceName": "DS_SQLDES1PipelineParameters",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "ForEachTable",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "LookupPipelineParameters",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('LookupPipelineParameters').output.value",
+								"type": "Expression"
+							},
+							"isSequential": true,
+							"activities": [
+								{
+									"name": "FE_Copy_XRM_to_SQLDES1",
+									"type": "Copy",
+									"dependsOn": [
+										{
+											"activity": "FE_StoredProc_TruncateTempTbls",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "DynamicsSource",
+											"query": {
+												"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n     </entity>\n</fetch>')",
+												"type": "Expression"
+											}
+										},
+										"sink": {
+											"type": "AzureSqlSink"
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "DS_XRMParameter",
+											"type": "DatasetReference",
+											"parameters": {
+												"xrmtablename": {
+													"value": "@item().Table_Name",
+													"type": "Expression"
+												},
+												"xrmlastmoddatetime": {
+													"value": "@item().Last_Mod_DateTime",
+													"type": "Expression"
+												}
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DS_SQLDES1Parameter",
+											"type": "DatasetReference",
+											"parameters": {
+												"sqltablename": {
+													"value": "@item().Table_Name",
+													"type": "Expression"
+												}
+											}
+										}
+									]
+								},
+								{
+									"name": "FE_StoredProc_TruncateTempTbls",
+									"type": "SqlServerStoredProcedure",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"storedProcedureName": "[[dbo].[usp_TruncateTable_Master]",
+										"storedProcedureParameters": {
+											"TblName": {
+												"value": {
+													"value": "@item().Table_Name_SQL",
+													"type": "Expression"
+												},
+												"type": "String"
+											}
+										}
+									},
+									"linkedServiceName": {
+										"referenceName": "AzureSql_des_001_df_LinkedService",
+										"type": "LinkedServiceReference"
+									}
+								}
+							]
+						}
+					},
+					{
+						"name": "StoredProc_ReplaceLastMod_PipelineParamenters_copy1",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "ForEachTable",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Replace_LastMod]"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSql_des_001_df_LinkedService",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1PipelineParameters')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureSql_des_001_df_LinkedService')]",
+				"[concat(variables('factoryId'), '/datasets/DS_XRMParameter')]",
+				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/P_ForEachTable_copy1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -8005,6 +8187,39 @@
 				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1PipelineParameters')]",
 				"[concat(variables('factoryId'), '/datasets/DS_XRMParameter')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureSql_des_001_df_LinkedService')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/P_UpdateDailyCount')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "SP_UpdateDailyCount",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[daily_total_counts_update]"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSql_des_001_df_LinkedService",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSql_des_001_df_LinkedService')]"
 			]
 		},
@@ -18416,7 +18631,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Minute",
-						"interval": 30,
+						"interval": 60,
 						"startTime": "2020-09-10T08:56:00.000Z",
 						"timeZone": "UTC"
 					}
@@ -18427,239 +18642,33 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/Trigger_Daily')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "P_UpdateDailyCount",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2020-07-31T07:25:00.000Z",
+						"startTime": "2020-09-12T01:00:00.000Z",
 						"timeZone": "UTC"
 					}
 				}
 			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/InsertTempToTbl')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "DS_SQLDES1Parameter",
-								"type": "DatasetReference"
-							},
-							"name": "sourceSQLParameter"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "DS_SQLDES1Parameter_2",
-								"type": "DatasetReference"
-							},
-							"name": "sinkSQLParameter"
-						}
-					],
-					"transformations": [],
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> sourceSQLParameter\nsourceSQLParameter sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sinkSQLParameter"
-				}
-			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter_2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/P_ForEachTable_Replace')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "LookupPipelineParameters",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": "\tSELECT [Table_Name_SQL]\n      ,[Table_Name]\n      ,[Table_Catalog]\n      ,[Key_Column]\n      ,[Process_Type]\n      ,[Last_Mod_DateTime]\n\t FROM [dbo].[pipeline_parameter]\n\tWHERE Process_Type = 'Replace'",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "DS_SQLDES1PipelineParameters",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"firstRowOnly": false
-						}
-					},
-					{
-						"name": "ForEachTable",
-						"type": "ForEach",
-						"dependsOn": [
-							{
-								"activity": "LookupPipelineParameters",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@activity('LookupPipelineParameters').output.value",
-								"type": "Expression"
-							},
-							"isSequential": true,
-							"activities": [
-								{
-									"name": "FE_Copy_XRM_to_SQLDES1",
-									"type": "Copy",
-									"dependsOn": [
-										{
-											"activity": "FE_StoredProc_TruncateTempTbls",
-											"dependencyConditions": [
-												"Succeeded"
-											]
-										}
-									],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [],
-									"typeProperties": {
-										"source": {
-											"type": "DynamicsSource",
-											"query": {
-												"value": "@CONCAT('<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n    <entity name=\"'\n\t, item().Table_Name\n\t,'\">\n       <all-attributes />\n     </entity>\n</fetch>')",
-												"type": "Expression"
-											}
-										},
-										"sink": {
-											"type": "AzureSqlSink"
-										},
-										"enableStaging": false
-									},
-									"inputs": [
-										{
-											"referenceName": "DS_XRMParameter",
-											"type": "DatasetReference",
-											"parameters": {
-												"xrmtablename": {
-													"value": "@item().Table_Name",
-													"type": "Expression"
-												},
-												"xrmlastmoddatetime": {
-													"value": "@item().Last_Mod_DateTime",
-													"type": "Expression"
-												}
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DS_SQLDES1Parameter",
-											"type": "DatasetReference",
-											"parameters": {
-												"sqltablename": {
-													"value": "@item().Table_Name",
-													"type": "Expression"
-												}
-											}
-										}
-									]
-								},
-								{
-									"name": "FE_StoredProc_TruncateTempTbls",
-									"type": "SqlServerStoredProcedure",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [],
-									"typeProperties": {
-										"storedProcedureName": "[[dbo].[usp_TruncateTable_Master]",
-										"storedProcedureParameters": {
-											"TblName": {
-												"value": {
-													"value": "@item().Table_Name_SQL",
-													"type": "Expression"
-												},
-												"type": "String"
-											}
-										}
-									},
-									"linkedServiceName": {
-										"referenceName": "AzureSql_des_001_df_LinkedService",
-										"type": "LinkedServiceReference"
-									}
-								}
-							]
-						}
-					},
-					{
-						"name": "StoredProc_ReplaceLastMod_PipelineParamenters_copy1",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "ForEachTable",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[usp_Replace_LastMod]"
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureSql_des_001_df_LinkedService",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1PipelineParameters')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureSql_des_001_df_LinkedService')]",
-				"[concat(variables('factoryId'), '/datasets/DS_XRMParameter')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter')]"
+				"[concat(variables('factoryId'), '/pipelines/P_UpdateDailyCount')]"
 			]
 		},
 		{
@@ -18693,67 +18702,37 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/P_UpdateDailyCount')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/InsertTempToTbl')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "SP_UpdateDailyCount",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[daily_total_counts_update]"
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureSql_des_001_df_LinkedService",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSql_des_001_df_LinkedService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Trigger_Daily')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "P_UpdateDailyCount",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "MappingDataFlow",
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2020-09-12T01:00:00.000Z",
-						"timeZone": "UTC",
-						"schedule": {}
-					}
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "DS_SQLDES1Parameter",
+								"type": "DatasetReference"
+							},
+							"name": "sourceSQLParameter"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DS_SQLDES1Parameter_2",
+								"type": "DatasetReference"
+							},
+							"name": "sinkSQLParameter"
+						}
+					],
+					"transformations": [],
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> sourceSQLParameter\nsourceSQLParameter sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sinkSQLParameter"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/P_UpdateDailyCount')]"
+				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter')]",
+				"[concat(variables('factoryId'), '/datasets/DS_SQLDES1Parameter_2')]"
 			]
 		}
 	]

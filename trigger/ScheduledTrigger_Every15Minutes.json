@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "P_ForEachTable_copy2",
+					"referenceName": "P_ForEachTable_Copy",
 					"type": "PipelineReference"
 				}
 			}

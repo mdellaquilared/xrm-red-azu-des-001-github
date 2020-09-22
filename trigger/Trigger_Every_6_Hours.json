@@ -2,7 +2,7 @@
 	"name": "Trigger_Every_6_Hours",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {

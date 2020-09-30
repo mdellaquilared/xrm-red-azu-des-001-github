@@ -2,7 +2,7 @@
 	"name": "ScheduledTrigger_Every15Minutes",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {

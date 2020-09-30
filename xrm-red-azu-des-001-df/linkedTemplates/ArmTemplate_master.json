@@ -15,11 +15,27 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Dyn365_Mercury_xrm_v1_df_LinkedService'"
 		},
+		"RED_AZU_SQL_001_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'RED_AZU_SQL_001'"
+		},
+		"RED_AZU_SQL_001_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RED_AZU_SQL_001'"
+		},
 		"XRMSQL_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'XRMSQL'"
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-red-azu-sql-001.vault.azure.net/"
+		},
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "mdellaquila@redsapsolutions.com"
+		},
+		"RED_AZU_SQL_001_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mdellaquila@redsapsolutions.com"
 		},
@@ -56,11 +72,23 @@
 					"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
 						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_password')]"
 					},
+					"RED_AZU_SQL_001_connectionString": {
+						"value": "[parameters('RED_AZU_SQL_001_connectionString')]"
+					},
+					"RED_AZU_SQL_001_password": {
+						"value": "[parameters('RED_AZU_SQL_001_password')]"
+					},
 					"XRMSQL_connectionString": {
 						"value": "[parameters('XRMSQL_connectionString')]"
 					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
 					"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
 						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username')]"
+					},
+					"RED_AZU_SQL_001_properties_typeProperties_userName": {
+						"value": "[parameters('RED_AZU_SQL_001_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -84,6 +112,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'xrm-red-azu-des-001-df_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "xrm-red-azu-des-001-df_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'xrm-red-azu-des-001-df_ArmTemplate_1')]"
 			]
 		}
 	]

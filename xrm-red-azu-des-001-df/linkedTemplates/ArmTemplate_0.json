@@ -15,11 +15,27 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Dyn365_Mercury_xrm_v1_df_LinkedService'"
 		},
+		"RED_AZU_SQL_001_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'RED_AZU_SQL_001'"
+		},
+		"RED_AZU_SQL_001_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RED_AZU_SQL_001'"
+		},
 		"XRMSQL_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'XRMSQL'"
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-red-azu-sql-001.vault.azure.net/"
+		},
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "mdellaquila@redsapsolutions.com"
+		},
+		"RED_AZU_SQL_001_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mdellaquila@redsapsolutions.com"
 		}
@@ -28,6 +44,19 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureSql_des_001_df_LinkedService')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -58,6 +87,24 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('Dyn365_Mercury_xrm_v1_df_LinkedService_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RED_AZU_SQL_001')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('RED_AZU_SQL_001_connectionString')]",
+					"userName": "[parameters('RED_AZU_SQL_001_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('RED_AZU_SQL_001_password')]"
 					}
 				}
 			},
@@ -7064,65 +7111,6 @@
 				"schema": [],
 				"typeProperties": {
 					"entityName": "crimson_candidate"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Dyn365_Mercury_xrm_v1_df_LinkedService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_XRMParameter')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"xrmtablename": {
-						"type": "string"
-					},
-					"xrmlastmoddatetime": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "DynamicsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": {
-						"value": "@dataset().xrmtablename",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Dyn365_Mercury_xrm_v1_df_LinkedService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_XRM_Table_Parameter')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Dyn365_Mercury_xrm_v1_df_LinkedService",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"xrmtablename": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "DynamicsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": {
-						"value": "@dataset().xrmtablename",
-						"type": "Expression"
-					}
 				}
 			},
 			"dependsOn": [

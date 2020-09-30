@@ -11,10 +11,22 @@
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_password": {
 			"value": ""
 		},
+		"RED_AZU_SQL_001_connectionString": {
+			"value": ""
+		},
+		"RED_AZU_SQL_001_password": {
+			"value": ""
+		},
 		"XRMSQL_connectionString": {
 			"value": ""
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kv-red-azu-sql-001.vault.azure.net/"
+		},
 		"Dyn365_Mercury_xrm_v1_df_LinkedService_properties_typeProperties_username": {
+			"value": "mdellaquila@redsapsolutions.com"
+		},
+		"RED_AZU_SQL_001_properties_typeProperties_userName": {
 			"value": "mdellaquila@redsapsolutions.com"
 		},
 		"containerUri": {
